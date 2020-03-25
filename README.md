@@ -1,0 +1,1 @@
+Here I will provide my test's scenarios and other scripts regarding QA automation in Python.
