@@ -1,4 +1,8 @@
+import pytest
 import requests
+from tests.API_tests.brewery_api_test.conftest import APIClient
+
+
 
 
 def test_code_200():
@@ -27,3 +31,18 @@ def test_places_number():
     response = requests.get("http://api.zippopotam.us/us/90210")
     response_body = response.json()
     assert len(response_body["places"]) == 1
+
+
+@pytest.mark.parametrize('place_name', ['Beverly Hills'])
+def test_api_filtering(api_client, place_name):
+    res = api_client.get(
+        path="/",
+        params={'place name': place_name}
+    )
+    print(res.json())
+    #Empty data check
+    assert res.json()[0]['place name'] == 'Beverly Hills'
+
+
+res = APIClient(base_address="http://api.zippopotam.us/us/90210")
+print(res.get(path='/').json()["places"][0]["place name"])
