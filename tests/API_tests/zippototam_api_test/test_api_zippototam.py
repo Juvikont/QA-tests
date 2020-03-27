@@ -1,3 +1,5 @@
+from pprint import pprint
+
 import pytest
 import requests
 from tests.API_tests.brewery_api_test.conftest import APIClient
@@ -44,5 +46,5 @@ def test_api_filtering(api_client, place_name):
     assert res.json()[0]['place name'] == 'Beverly Hills'
 
 
-res = APIClient(base_address="http://api.zippopotam.us/us/90210")
-print(res.get(path='/').json()["places"][0]["place name"])
+# res = APIClient(base_address="http://api.zippopotam.us/us/90210")
+# print(pprint(res.get(path='/').json()["places"][0]["place name"]))
