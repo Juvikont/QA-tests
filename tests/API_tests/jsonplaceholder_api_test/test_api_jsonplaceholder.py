@@ -18,7 +18,7 @@ def test_api_post_request(api_client, input_id, output_id, input_title, output_t
     assert res['userId'] == output_id
 
 
-# Post's filter by User ID
+# # Post's filter by User ID
 # https://jsonplaceholder.typicode.com/posts?userId=1
 @pytest.mark.parametrize('userId', [-1, 0])
 def test_api_filtering(api_client, userId):
@@ -31,8 +31,8 @@ def test_api_filtering(api_client, userId):
 
 
 # Post's filter by User ID
-# https://jsonplaceholder.typicode.com/posts?userId=1
-@pytest.mark.parametrize('userId, userId_in_response', [(1, 1), (2, 2)])
+# # https://jsonplaceholder.typicode.com/posts?userId=1
+@pytest.mark.parametrize('userId, userId_in_response', [(1, 1), (2, 2),(3,3),(5,5)])
 def test_api_filtering(api_client, userId, userId_in_response):
     response = api_client.get(
         path="/posts",
@@ -41,3 +41,4 @@ def test_api_filtering(api_client, userId, userId_in_response):
     # Check's that random post has the right User ID
     random_post_number = random.randint(1, 10)
     assert response.json()[random_post_number]['userId'] == userId_in_response
+
