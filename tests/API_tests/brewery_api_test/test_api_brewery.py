@@ -5,7 +5,7 @@ import random
 @pytest.mark.parametrize('input_id, output_id',
                          [(10000, '10000'), (-1, '-1'), (0, '0')])
 @pytest.mark.parametrize('input_title, output_title',
-                         [('title', 'title'), ('', ''), (100, '100'), ('&', '&')])
+                         [('brewery_type', 'brewery_type'), ('', ''), (100, '100'), ('&', '&')])
 def test_api_post_request(api_client, input_id, output_id, input_title, output_title):
     res = api_client.post(
         path="/brewery",
