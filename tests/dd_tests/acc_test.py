@@ -13,14 +13,10 @@ class Account:
             raise ValueError("You can't deposit negative amount")
         self.balance += amount
 
-    def savings(self, interest):
+    def interest(self, interest):
         if self.type == "savings":
             self.balance *= (1 + interest)
 
-
-my_account = Account(1000, "savings")
-my_account.savings(50)
-print(my_account.balance)
 
 my_other_account = Account(1000, "savings")
 
@@ -33,3 +29,14 @@ try:
 except:
     print("That doesn't work either...")
 
+my_account = Account(1000, "savings")
+my_account.withdraw(500)
+my_account.deposit(750)
+my_account.interest(0.05)
+print(my_account.balance)
+
+my_other_account = Account(1000, "checking")
+my_other_account.withdraw(500)
+my_other_account.deposit(750)
+my_other_account.interest(0.05)
+print(my_other_account.balance)
