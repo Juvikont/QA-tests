@@ -43,8 +43,9 @@ n = int(input('Enter Number: '))
 for i in range(-n + 1, n):
     print("   " * (abs(i)), end="")
     for j in range(n - abs(i), 0, -1):
-        print(j, end="")
+        print(j, end=" ")
     print("  " * (n - abs(i) - 2), end="")
     for j in range(2 if abs(i) + 1 == n else 1, n - abs(i) + 1):
-        print(j,end=" ")
+        print(j, end=" ")
     print("")
+
