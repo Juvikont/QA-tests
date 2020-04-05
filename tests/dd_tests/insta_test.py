@@ -8,24 +8,35 @@ username = input()
 print('Enter password: ')
 password = input()
 
-print('Enter the url: ')
-url = input()
+# print('Enter the url: ')
+# url = input()
+
+chrome = webdriver.Chrome(r'C:\Users\Yuri\Desktop\chromedriver.exe')
 
 
 def path():
-    """webdriver path finder"""
     global chrome
-    print('Enter driver path')
-    exe_path = input()
-    # start's new session
-    chrome = webdriver.Chrome(executable_path=exe_path)
+    # print("enter the driver path")
+    # exe_path = input()
+
+    # starts a new chrome session
+    chrome = webdriver.Chrome(r'C:\Users\Yuri\Desktop\chromedriver.exe')
 
 
-def url_name(url):
+# def path():
+#     """webdriver path finder"""
+#     global chrome
+#     print('Enter driver path')
+#     exe_path = input()
+#     # start's new session
+#     chrome = webdriver.Chrome(executable_path=exe_path)
+
+
+def url_name():
     """web page opens up"""
-    chrome.get(url)
+    chrome.get('https://www.instagram.com')
     # wait 4 sec
-    time.sleep(4)
+    # time.sleep(4)
 
 
 def login(username, your_password):
@@ -79,10 +90,11 @@ def liker():
             break
 
 
-path()
-time.sleep(1)
+# path()
+# time.sleep(1)
 
-url_name(url)
+# url_name('www.instagram.com')
+url_name()
 login(username, password)
 
 first_picture()
