@@ -2,7 +2,7 @@ from pprint import pprint
 
 import pytest
 import requests
-from tests.api_tests.brewery_api_test.conftest import APIClient
+# from tests.API_tests.zippototam_api_test.conftest import APIClient
 
 
 
