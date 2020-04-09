@@ -10,3 +10,13 @@ class B:
 
 a = B()
 print(B._B__count)
+
+def gen(n):
+    while n != 0:
+        yield n-1
+        n-=1
+
+# g = gen(4)
+
+for i in gen(4):
+    print(i)
