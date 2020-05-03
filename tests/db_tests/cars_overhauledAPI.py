@@ -10,7 +10,7 @@ orders = [
 
 
 def create_database():
-    conn = sqlite3.connect("db_tests/customers_orders.db")
+    conn = sqlite3.connect("customers_orders.db")
     cursor = conn.cursor()
     cursor.execute(
         "CREATE TABLE customer (id INTEGER NOT NULL, first_name TEXT NOT NULL, last_name TEXT NOT NULL)"
@@ -27,7 +27,7 @@ def create_database():
 
 
 def query_database():
-    conn = sqlite3.connect("db_tests/examples/customers_orders.db")
+    conn = sqlite3.connect("customers_orders.db")
     cursor = conn.cursor()
     cursor.execute(
         "SELECT COUNT(cust_order.description) FROM cust_order INNER JOIN customer ON cust_order.customer = "
