@@ -22,7 +22,7 @@ entryname1.grid(column=1, row=1)
 entryname2 = tk.Entry(root, width=20)
 entryname2.grid(column=1, row=2)
 
-button2 = tk.Button(text="   ПРОВЕРЬ УРОВЕНЬ ЛЮБВИ К ЮРЕ   ", bg='pink', command=CheckLove)
+button2 = tk.Button(text="   ПРОВЕРЬ УРОВЕНЬ ЛЮБВИ   ", bg='pink', command=CheckLove)
 button2.grid(column=1, row=3)
 
 label1 = tk.Label(root, text='Введи Имя : ', bg='red', font=('', 15, 'bold'))
