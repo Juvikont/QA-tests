@@ -1,5 +1,5 @@
 from selenium import webdriver
-from tests.selenium_insta import bot_engine
+from selenium_insta import bot_engine
 
 chromedriver_path = r'C:\Users\Yuri\Desktop\chromedriver.exe'
 webdriver = webdriver.Chrome(executable_path=chromedriver_path)

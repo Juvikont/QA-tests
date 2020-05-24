@@ -1,5 +1,5 @@
 import mysql.connector
-from tests.selenium_insta import constants
+from selenium_insta import constants
 
 
 class DBHandler:
