@@ -10,7 +10,7 @@ def init():
     data = None
     with open('settings.json', 'r') as myfile:
         data = myfile.read()
-    obj = json.load(data)
+    obj = json.loads(data)
     INST_USER = obj['instagram']['user']
     INST_PASS = obj['instagram']['pass']
     USER = obj['db']['user']
