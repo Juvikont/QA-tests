@@ -13,12 +13,12 @@ def delete_user(username):
     mydb.commit()
 
 
-# new user
+#new user
 def add_user(username):
     mydb = DBHandler.get_mydb()
     cursor = mydb.cursor()
     now = datetime.datetime.now().date()
-    cursor.execute("INSERT INTO followed_users(username,date_added) VALUES(%s,%s)", (username, now))
+    cursor.execute("INSERT INTO followed_users(username, date_added) VALUES(%s,%s)",(username, now))
     mydb.commit()
 
 #ready to unfollow
